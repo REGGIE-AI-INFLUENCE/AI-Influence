@@ -349,7 +349,7 @@
                 <p class="subtitle">Mount & Blade II: Bannerlord — Complete Feature Compendium</p>
                 <p>Revolutionary AI Integration Mod • Transforming Gaming Experience</p>
             </div>
-            <div class="badge">v4.1.0 • Updated: March 2026</div>
+            <div class="badge">v5.0.0 • Updated: April 2026</div>
         </header>
         
         <!-- WARNING BOX - PATAISYTA -->
@@ -818,7 +818,7 @@
             </div>
         </div>
         
-        <!-- Version History - PERKELTA I APACIA (now with v4.1.0) -->
+        <!-- Version History - PERKELTA I APACIA (now with v5.0.0) -->
         <div class="section page-break" id="version-history">
             <h2 class="section-title"><span class="icon">📈</span> Evolution & Major Updates</h2>
             <div class="version-timeline">
@@ -870,7 +870,7 @@
                     <strong>Fixes:</strong> Medicine XP on hero recovery corrected; Lords now receive medicine XP on personal recovery; Diplomacy — trade agreement pending response bug fixed; Territory transfer with multiple settlements fixed; Quarantine settlement action fixed; NPC Initiative — relation changes, TTS await, hostile initiative notifications fixed; Quests — events reach target NPCs, crash on dead quest giver fixed; Messengers — dialog description shows latest message; Diseases — troop immunity strengthened.</p>
                 </div>
 
-                <!-- NEW: v4.1.0 entry (added update) -->
+                <!-- v4.1.0 entry -->
                 <div class="version-item">
                     <div class="version-title">v4.1.0 (March 2026)</div>
                     <p><strong>New:</strong> Group conversation — talk to several NPCs at once during missions (towns, keeps, lord halls, etc.). Press Alt+T near lords, clan companions, wanderers, or notables within ~5 m: your line is broadcast to everyone in range, and each hears the others’ replies in the same round (shared group history in their AI context). Participants update as people move: new arrivals can join, those who walk away are paused until they return within a larger grace radius — you end the talk when you leave, not automatically. With TTS on, responses are prepared in a pipeline (next NPC while the current line plays). If nearby NPCs were in a private scripted exchange, your message can interrupt and pull them into the group. Requires the main mod toggle; works like the rest of AI dialog (API, prompts, technical actions where applicable).<br>
@@ -878,6 +878,40 @@
                     <strong>Fixed:</strong> Diplomacy: fixed diplomatic / world events vanishing from the interface when they should stay visible (statements and event entries no longer disappear incorrectly).<br>
                     Settlement transfer in dialogue: fixed handing over or receiving fiefs through NPC conversation — transfers that should execute after agreement in chat now resolve correctly instead of failing silently or losing the settlement.<br>
                     <strong>Bug fixes and improvements.</strong></p>
+                </div>
+
+                <!-- v5.0.0 entry (NEW) -->
+                <div class="version-item">
+                    <div class="version-title">v5.0.0 (April 2026)</div>
+                    <p><strong>New:</strong><br>
+                    • Ambient NPC conversations — in settlement mission scenes, nearby lords, wanderers, and notables can occasionally start short AI-driven exchanges with each other; dialogue is saved to each participant's memory; disabled during settlement combat and while those NPCs are in your group conversation; MCM: chance, radius, max lines, cooldown, optional TTS.<br>
+                    • Overheard speech — in settlement scenes, nearby heroes within ~14 m can pick up lines from your dialog, group conversations, and ambient NPC chats; up to ~4 m they hear clearly, farther away the text is distorted; overheard lines are saved to that NPC's conversation history and memory, and may later appear in dynamic events as noisy witness snippets (not treated as canonical facts).<br>
+                    • Companion selection when entering locations — popup when entering a tavern, lord hall, etc.; unselected companions stay in your party and remain available for settlement-combat reinforcements; NPCs with `follow_player` outside the party still enter automatically.<br>
+                    • Kingdom tax policy — kingdom ruler (player or AI) sets tax rate (%) and scope (all settlements / towns / castles / villages / one settlement) through diplomatic statements; affects town tax, village income, and prosperity, loyalty, and hearth tooltips.<br>
+                    • Local trade price shifts — dynamic effects raise or lower buy/sell prices by item category for a set number of days; effects stack; shown in World Events; MCM clamps AI-generated percentages.<br>
+                    • Clan caravans in dialogue — Character Briefing lists active trade caravans owned by the NPC's clan (leader, home base, location, elite flag, troop count; truncated if many).<br>
+                    • Custom AI settings per save — world description, rumours, secrets, cultural notes, and rule overrides live in your campaign save folder (`save_data/<campaign_id>/prompts/...`), not the mod directory; created on first play.<br>
+                    • Prompt module router — before each NPC reply, a lightweight AI call reads the last two messages and selects optional prompt modules (`world`, `actions`, `quests`, `economy_inventory`, `romance`, `conflict`); core character, family, location, and military blocks are always included; router prompt editable per save at `prompts/PromptModuleResponse.txt`; falls back to full prompt on failure.<br>
+                    • Added in-game SST speak.<br>
+                    <strong>Reworked:</strong><br>
+                    • Dynamic events and diplomacy — old day-based statement queues replaced by daily response-pressure (model sets urgency, game rolls each day); stale peace offers, territory demands, tribute, and reparations no longer linger after the other side answered; combined replies no longer marked unresolved.<br>
+                    • Settlement combat — smoother scene transitions (e.g. lord hall → town centre), companion participation, defender reinforcement timing, post-combat flow, and cleanup on end or interrupt.<br>
+                    <strong>Fixed:</strong><br>
+                    • Settlement tooltips (prosperity, food, security, loyalty): each economic effect on its own line with daily value and reason.<br>
+                    • NPC gold limits only outgoing payment to you (`give`), not what you can pay them (`receive`).<br>
+                    • Troop prisoners listed in captivity briefings like party troops — unit name, `string_id`, count.<br>
+                    • Character Briefing <strong>Relatives</strong>: former spouses from `Hero.ExSpouses` (`former wife` / `former husband` + `string_id`); current spouse with full details; remarriage uses vanilla `Hero.Spouse` rules.<br>
+                    • Dynamic events: AI sees a land-adjacency list of kingdoms that actually share a border — no invented neighbours.<br>
+                    • Diseases: ACTIVE DISEASES and outbreak snippets list only AI-driven epidemics; simultaneous-disease cap applies to the same set.<br>
+                    • AI disease treatment: lord parties count as at settlement when inside or within gate range (vanilla recruiting rule).<br>
+                    • Troop disease spread: party-size damping in large armies; removed duplicate large-party recovery bonus.<br>
+                    • New campaign: personal relations between each pair of kingdom leaders random from −10 to +10.<br>
+                    • NPC initiative: party companions and army lords/heroes can initiate conversations again; army members excluded from independent map-approach behaviour.<br>
+                    • AI backends: HTTP timeout raised to 300 seconds.<br>
+                    • Quarantine: siege and war encounters with hostile settlements no longer blocked (own fiefs still respect quarantine).<br>
+                    • AI action `siege_settlement`: army leader marches full army to target via vanilla `SetPartyAiAction` (`Army.ArmyTypes.Besieger`); party AI disabled for the march.<br>
+                    <strong>Documentation:</strong> In-mod technical prompt documentation updated for 5.0 (diplomacy, dynamic events, kingdom statements, settlement combat, per-save prompt files, prompt module router).<br>
+                    <strong>Supported on 1.3.15, 1.4.x</strong> — plus many additional minor fixes and polish changes not listed above.</p>
                 </div>
             </div>
         </div>
@@ -895,8 +929,8 @@
             </div>
             
             <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(232, 216, 182, 0.2);">
-                <p><strong>Current Version:</strong> 4.1.0 • <strong>Last Updated:</strong> March 2026</p>
-                <p><strong>Compatibility:</strong> Mount & Blade II: Bannerlord v1.3.2+</p>
+                <p><strong>Current Version:</strong> 5.0.0 • <strong>Last Updated:</strong> April 2026</p>
+                <p><strong>Compatibility:</strong> Mount & Blade II: Bannerlord v1.3.15, v1.4.x</p>
                 <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
                     This document is community-generated based on official changelogs. Always check official sources for latest information.
                 </p>
