@@ -349,7 +349,7 @@
                 <p class="subtitle">Mount & Blade II: Bannerlord — Complete Feature Compendium</p>
                 <p>Revolutionary AI Integration Mod • Transforming Gaming Experience</p>
             </div>
-            <div class="badge">v5.0.0 • Updated: April 2026</div>
+            <div class="badge">v6.0.2 • Updated: August 2026</div>
         </header>
         
         <!-- WARNING BOX - PATAISYTA -->
@@ -561,6 +561,146 @@
                         <li>Distance-based cost calculation</li>
                         <li>Message history tracking</li>
                         <li>Integration with relationship system</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 🖥️ Content Editor - NAUJA -->
+        <div class="section">
+            <h2 class="section-title"><span class="icon">🖥️</span> Content Editor (In-Game Settings Hub)</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3><span class="icon">⚙️</span> Campaign Editing Without Save Digging</h3>
+                    <ul>
+                        <li>In-game web UI opened from the pause menu (ESC → AI Influence Settings)</li>
+                        <li>World tab — description, public facts, secrets, cultural traditions, AI drafting help</li>
+                        <li>Character tab — how NPCs see your hero; create companions and family members</li>
+                        <li>Family tree builder — parents, siblings, spouse, children created and linked at once</li>
+                        <li>NPC tab — searchable list, personality/backstory generation, live dialogue editing</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><span class="icon">🗂️</span> Events, Prompts & Data Management</h3>
+                    <ul>
+                        <li>Events tab — hand-craft world events: importance, who knows, economic/disease effects</li>
+                        <li>Prompts tab (Full mode) — edit the mod's text templates with reset-to-defaults</li>
+                        <li>Service tab — open save folder, restore or delete automatic backups</li>
+                        <li>Import/export world data, facts, secrets, traditions, and prompt packs</li>
+                        <li>Simple and Full modes; Russian and English interface; undo support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🧠 Memory System & Conversation RAG - NAUJA -->
+        <div class="section">
+            <h2 class="section-title"><span class="icon">🧩</span> Memory System &amp; Conversation RAG</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3><span class="icon">📚</span> Smart Conversation Retrieval</h3>
+                    <ul>
+                        <li>Full dialogue log kept in the save — no more MEMORY-line compression</li>
+                        <li>Always sends the last N messages plus Top-K relevant past chunks when needed</li>
+                        <li>Local BM25 search, with semantic embeddings via Player2 (Hybrid/Auto modes)</li>
+                        <li>Old MEMORY lines and new memory entries indexed and surfaced only when relevant</li>
+                        <li>Works for live dialogue, NPC letters, and letter replies alike</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><span class="icon">📖</span> Redesigned Memory Book</h3>
+                    <ul>
+                        <li>Visual-memory consolidation — old conversation history is never deleted or rewritten</li>
+                        <li>Open-book web UI: memory list on the left, illustrated scene + summary on the right</li>
+                        <li>Opens from quest screen, a configurable hotkey (F1–F12), or map notifications</li>
+                        <li>Optional Player2 photorealistic scene illustrations, generated on demand later too</li>
+                        <li>Notifications show an NPC portrait without revealing the memory's full content</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🦠 Disease System - NAUJA -->
+        <div class="section">
+            <h2 class="section-title"><span class="icon">🦠</span> Disease System</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3><span class="icon">🤒</span> Spread &amp; Treatment</h3>
+                    <ul>
+                        <li>Diseases spread between settlements and affect populations and troops</li>
+                        <li>AI lords set disease duration and actively treat their troops while resting</li>
+                        <li>Quarantine system — settlements can be sealed, durations stack correctly</li>
+                        <li>Light diseases (severity 1–2) no longer kill — penalties only, normal recovery</li>
+                        <li>Troop and hero immunity, treatment, and healing speed all configurable in MCM</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><span class="icon">💊</span> Medicine &amp; Outbreaks</h3>
+                    <ul>
+                        <li>Medicine skill XP for surgeons and lords curing diseases or personally recovering</li>
+                        <li>Disease outbreaks can appear as their own dynamic event type</li>
+                        <li>Fully disableable in MCM if you don't want the system running at all</li>
+                        <li>Prisoner and captured-lord disease spread handled correctly</li>
+                        <li>Editable in Content Editor's Events tab alongside other world events</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 👥 Group Conversations & Battle Tactics AI - NAUJA -->
+        <div class="section">
+            <h2 class="section-title"><span class="icon">👥</span> Group Conversations &amp; Battle Tactics AI</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3><span class="icon">🗣️</span> Multi-NPC Conversations</h3>
+                    <ul>
+                        <li>Alt+T talks to several nearby NPCs at once — shared group history in their context</li>
+                        <li>Ambient NPC conversations — nearby lords/notables occasionally chat among themselves</li>
+                        <li>Overheard speech — nearby heroes can pick up (and distort) your dialogue at a distance</li>
+                        <li>Participant selection window (Alt+T) with a fixed roster for the session; Alt+G to end</li>
+                        <li>TTS-piped responses so the next speaker prepares while the current line plays</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><span class="icon">⚔️</span> Battle Tactics AI</h3>
+                    <ul>
+                        <li>LLM-driven orders in field battles — your commander reads formations and casualties</li>
+                        <li>Optional Alt+B natural-language commands, interpreted and converted to real orders</li>
+                        <li>Optional formation captains commanding their own formation independently</li>
+                        <li>Next-best tactician takes over automatically if your commander falls</li>
+                        <li>Commander shouts and troop barks shown on-screen and logged for Dynamic Events</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🏟️ Arena Training & Kingdom Tax - NAUJA -->
+        <div class="section">
+            <h2 class="section-title"><span class="icon">🏟️</span> Arena Training &amp; Kingdom Economy</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3><span class="icon">🎯</span> Arena Troop Training</h3>
+                    <ul>
+                        <li>Train your own party, a companion's troops, or all clan parties at town arenas</li>
+                        <li>AI lords train their own troops too — a "Trains troops" notice shows above the town</li>
+                        <li>Cost scales with troop tier; cooldown between sessions; unavailable during tournaments</li>
+                        <li>Occasional sparring injuries add a light risk to training</li>
+                        <li>Fully toggleable in MCM, separately for the player and for AI lords</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <h3><span class="icon">🏦</span> Kingdom Tax &amp; Trade Shifts</h3>
+                    <ul>
+                        <li>Rulers set a kingdom tax rate and scope (all/town/castle/village/single settlement)</li>
+                        <li>Tax policy affects town tax, village income, prosperity, loyalty, and hearth tooltips</li>
+                        <li>Local trade price shifts — temporary buy/sell modifiers by item category, stacking</li>
+                        <li>Clan caravans shown in dialogue briefings — leader, base, location, troop count</li>
+                        <li>Settlement tooltips break down every economic effect on its own line, with a reason</li>
                     </ul>
                 </div>
             </div>
@@ -913,6 +1053,84 @@
                     <strong>Documentation:</strong> In-mod technical prompt documentation updated for 5.0 (diplomacy, dynamic events, kingdom statements, settlement combat, per-save prompt files, prompt module router).<br>
                     <strong>Supported on 1.3.15, 1.4.x</strong> — plus many additional minor fixes and polish changes not listed above.</p>
                 </div>
+
+                <!-- v5.0.1 entry -->
+                <div class="version-item">
+                    <div class="version-title">v5.0.1 (April 2026)</div>
+                    <p><strong>Compatibility patch:</strong> Combat initiation from dialogue no longer fails on a delayed step on 1.4.x; settlement income multipliers from dynamic events apply correctly again. A stability patch for 1.4.x alongside continued 1.3.15 support.</p>
+                </div>
+
+                <!-- v5.0.2 entry -->
+                <div class="version-item">
+                    <div class="version-title">v5.0.2 (April 2026)</div>
+                    <p><strong>Fixed:</strong> World secrets/lore now load from campaign world-data files on NPC creation, not stale built-in defaults; NPC world knowledge set on first meeting, not only after opening dialogue; ambient conversations no longer trigger during bandit hideout assaults; lords no longer tag along into rooms after a background chat ends; group conversation handles interruption correctly; empty replies after introducing yourself fixed; duplicate world news entries removed; troop/prisoner visibility in briefings now situational; trust and interaction-count tracking corrected across solo/group/NPC↔NPC dialogue; AI-created quests moved to a dedicated `quest_action` field, fixing blank long descriptions.</p>
+                </div>
+
+                <!-- v5.0.3 entry -->
+                <div class="version-item">
+                    <div class="version-title">v5.0.3 (April 2026)</div>
+                    <p><strong>New:</strong> `character_cognitive_style` — a generated field describing how an NPC thinks and reacts to humor, lying, wit, empathy, and flirting, used when interpreting jokes, deception, and motives.<br>
+                    <strong>Fixed:</strong> Expired dynamic events and statements are hidden instead of deleted, preserving diplomatic history; ambient conversation TTS toggle applies immediately; marriage with settlement notables (gang leaders, merchants, artisans) now completes correctly; marriage actions unified and validated across all dialogue modes; NPC trust correctly reflects lie penalties; conversation gap lines and `follow_player` mission spawning fixed; battle-join logic for followers with their own parties corrected.</p>
+                </div>
+
+                <!-- v5.0.4 entry -->
+                <div class="version-item">
+                    <div class="version-title">v5.0.4 (April 2026)</div>
+                    <p><strong>New:</strong> Optional Player2 image generation for world events; FPS debug overlay (MCM); Unique AI Characters — the mod periodically spawns new AI-driven NPCs with full personalities near you; AI arena troop training for lords; group conversation participant-selection window (Alt+T); NPCs walk away after conversations instead of freezing; smarter Battle Tactics AI with order memory.<br>
+                    <strong>Fixed:</strong> Personal lord relations now apply to the specific lord, not their clan leader; world diplomatic timeline ordering; force-generate-events debug button no longer wipes existing data; NPCs read nearby events based on actual position; arena "train all together" edge case; romance decay over time; group conversation companion positioning.</p>
+                </div>
+
+                <!-- v5.0.5 entry -->
+                <div class="version-item">
+                    <div class="version-title">v5.0.5 (April 2026)</div>
+                    <p><strong>New:</strong> Memory System (MCM, disabled by default) — periodically condenses NPC dialogue history into long-term memory entries with a dedicated Memory Book UI, notifications, and optional Player2 scene images; separate AI backend selectable for memory processing. Dialogue scene images (Player2 only) generated alongside AI replies.<br>
+                    <strong>Fixed:</strong> Gold/item transfer honesty — AI is told when a promised transfer actually failed; AI-created unique characters join clans correctly as companions; unique companions no longer duplicate as ambient NPCs after joining; diplomacy no longer targets destroyed kingdoms; infinite war-declaration loop when ordering attacks/sieges fixed.</p>
+                </div>
+
+                <!-- v5.0.6 entry -->
+                <div class="version-item">
+                    <div class="version-title">v5.0.6 (April 2026)</div>
+                    <p><strong>New:</strong> Configurable Memory Book hotkey (F1–F12) as a workaround for players who couldn't open the book via the quest screen; better failure tracking for the issue.<br>
+                    <strong>Fixed:</strong> NPCs no longer occasionally reply with a generic "nothing to say" instead of a real response; memory-folded characters still show last-spoken info correctly; daily memory processing sped up and prioritized by chat history length (up to 30/day, was 12); Memory Book visibility now respects both the memory system and mod toggle.</p>
+                </div>
+
+                <!-- v5.0.7 entry -->
+                <div class="version-item">
+                    <div class="version-title">v5.0.7 (April 2026)</div>
+                    <p><strong>Fixed:</strong> Memory System no longer overwrites older memories when new ones are created; memory updates focus only on dialogue since the last summary; improved default memory summaries; kingdoms can submit new peace/tribute/reparations/territory proposals after old ones expire; tribute agreement saving fixed.</p>
+                </div>
+
+                <!-- v6.0.0 entry -->
+                <div class="version-item">
+                    <div class="version-title">v6.0.0 (June 2026)</div>
+                    <p><strong>New:</strong><br>
+                    • Content Editor — a full in-game settings hub (ESC → AI Influence Settings) covering World, Character, NPC, Events, Prompts (Full mode), Service, and Import/Export, in Simple and Full modes, with built-in tips and undo support.<br>
+                    • Conversation RAG — full dialogue log kept in the save; the AI is sent the last N messages plus Top-K relevant retrieved chunks (BM25 locally, semantic embeddings via Player2 with Hybrid/Auto modes) instead of relying on inline MEMORY-line compression.<br>
+                    • Memory System reworked to visual-memories-only — consolidation no longer touches ConversationHistory; token savings for old dialogue now handled by RAG. Memory Book fully redesigned as an open-book web UI (WebView2), replacing the old Gauntlet screen.<br>
+                    • Mentioned settlements now show distance, plus port/capital markers, in dialogue context.<br>
+                    • Dialogue scene images — merged into a single "Talk (with scene image)" option (Player2 only), no separate toggle.<br>
+                    • Player2 temperature slider added to API Settings.<br>
+                    <strong>Fixed:</strong><br>
+                    • NPCs no longer misjudge time-since-last-talk due to internal memory consolidation dates.<br>
+                    • Mentioned settlements/items parsing — far fewer false positives, stricter matching, capped result counts.<br>
+                    • NPC siege behaviour — armies no longer freeze on the march or camp at walls without sieging; assaults resume correctly.<br>
+                    • Ordered NPC attacks no longer loop endlessly between attack and flee against stronger enemies.<br>
+                    • Visited-settlement knowledge captured once per visit instead of re-rolling every prompt, stabilizing the dialogue prompt cache.<br>
+                    • NPC Initiative messenger cost scaling adjusted.</p>
+                </div>
+
+                <!-- v6.0.1 entry -->
+                <div class="version-item">
+                    <div class="version-title">v6.0.1 (July 2026)</div>
+                    <p><strong>New:</strong> Content Editor family creation — build a full family tree (parents, siblings, spouse, children, other relatives) with shared history and create everyone in your clan at once; AI personalities generated in the background afterward.<br>
+                    <strong>Fixed:</strong> Content Editor dialogue edits now apply to the live in-game context immediately, not just on reload; family members can appear in the "who to bring with you" location-entry popup like companions; Memory Book no longer leaves the game paused under the ESC menu; Memory Book/Content Editor hotkeys now follow vanilla campaign panel rules (except during map dialogue); save-slot mod data restores automatically on load (old restore/keep-current dialog removed); save/load operations logged to `logs/save.log`; unique AI-created NPCs can now join group conversations; the web UI is blocked (with an in-game message) in exclusive Fullscreen mode — use Windowed or Borderless Fullscreen instead.</p>
+                </div>
+
+                <!-- v6.0.2 entry -->
+                <div class="version-item">
+                    <div class="version-title">v6.0.2 (August 2026)</div>
+                    <p><strong>Fixed:</strong> Joining an ongoing NPC-to-NPC talk now properly ends that private chat instead of running two dialogues at once; companions follow correctly in settlements and resume following after group/private talks; Save &amp; Exit now saves mod data correctly (Quick Save was already fine); Content Editor personality regeneration saves to the character file, not just the encyclopedia, and custom companions spawn with correct gender/appearance; rare save-corrupting quotation-mark issue in memories/events fixed; Memory Book now saves scene data even with image generation off, so illustrations can be generated later, with a new "Generate illustration" button; NPCs no longer approach each other for chats during tournament matches; kingdom tax Harmony patches restored in release builds, and tax policies now survive save &amp; reload.</p>
+                </div>
             </div>
         </div>
         
@@ -929,8 +1147,8 @@
             </div>
             
             <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(232, 216, 182, 0.2);">
-                <p><strong>Current Version:</strong> 5.0.0 • <strong>Last Updated:</strong> April 2026</p>
-                <p><strong>Compatibility:</strong> Mount & Blade II: Bannerlord v1.3.15, v1.4.x</p>
+                <p><strong>Current Version:</strong> 6.0.2 • <strong>Last Updated:</strong> August 2026</p>
+                <p><strong>Compatibility:</strong> Mount & Blade II: Bannerlord v1.4.x (1.3.15 no longer supported)</p>
                 <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
                     This document is community-generated based on official changelogs. Always check official sources for latest information.
                 </p>
